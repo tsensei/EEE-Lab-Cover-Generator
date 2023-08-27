@@ -9,14 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/server": "^11.11.0",
+    "@mantine/core": "^6.0.19",
+    "@mantine/dates": "^6.0.19",
+    "@mantine/form": "^6.0.19",
+    "@mantine/hooks": "^6.0.19",
+    "@mantine/next": "^6.0.19",
     "@types/node": "20.5.6",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "dayjs": "^1.11.9",
+    "docxtemplater": "^3.38.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "file-saver": "^2.0.5",
     "next": "13.4.19",
+    "pizzip": "^3.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5"
   }
 }
