@@ -85,6 +85,70 @@ const Homepage = () => {
     },
   });
 
+  const studentData = [
+    "--- Select Student Name ---",
+    "Arik Islam (1)",
+    "Anika Sanzida Upoma (2)",
+    "Abdullah Evne Masood (3)",
+    "Tahsina Sultana Afifa (4)",
+    "Md. Akram Khan (5)",
+    "Dipta Bhattacharjee (6)",
+    "Sumaiya Rahman Soma (7)",
+    "Shaila Jaman Priti (8)",
+    "Aditto Raihan (9)",
+    "Istiak Ahammed Rhyme (10)",
+    "Md. Shakin Alam Karbo (11)",
+    "Mir. Md. Ishrak Faisal (12)",
+    "H.M. Mehedi Hasan (13)",
+    "Md. Sarif (14)",
+    "Srabon Aich (15)",
+    "Ibna Afra Roza (16)",
+    "Suraya Jannat Mim (17)",
+    "Swapon Chandra Roy (18)",
+    "Anisha Tabassum (19)",
+    "Md. Ashif Mahmud Kayes (20)",
+    "Abantika Paul (21)",
+    "Mehedi Hasan (22)",
+    "Jubayer Ahmed Sojib (23)",
+    "Jobaer Hossain Tamim (24)",
+    "Md. Shahria Hasan Jony (25)",
+    "Sonia Akter (26)",
+    "Md. Sadman Sakib (27)",
+    "Dibbajothy Sarker (28)",
+    "Md. Mohasin Molla (29)",
+    "Md. Mahmudur Rahman Moin (30)",
+    "Jotish Biswas (31)",
+    "Saad Bin Ashad (32)",
+    "Sharfraz Khan Hridue (33)",
+    "Abdullah-Ash-Sakafy (34)",
+    "Farhan Bin Rabbani (35)",
+    "Md. Sadman Shihab (36)",
+    "Labonya Pal (37)",
+    "Ahnaf Mahbub Khan (38)",
+    "Tamal Kanti Sarker (39)",
+    "Nafisha Akhter (40)",
+    "Md. Rushan Jamil (41)",
+    "S. M. Shamiun Ferdous (42)",
+    "Hasanat Ashrafy (43)",
+    "Md. Nadim Mahmud Chowdhury Sizan (44)",
+    "Md. Ariful Islam (45)",
+    "Ahil Islam Aurnob (46)",
+    "Md. Abu Bakar Siddique (47)",
+    "Farhana Alam (48)",
+    "Atiya Fahmida Noshin (49)",
+    "Biplob Pal (50)",
+    "Tasnova Shahrin (51)",
+    "Most. Ishrat Jahan Mim (52)",
+    "Abul Hasan Anik (53)",
+    "Mst. Tasmia Sultana Sumi (54)",
+    "Chowdhury Shafahid Rahman (55)",
+    "Mst. Tabassum Kabir (56)",
+    "N. M Rashidujjaman Masum (57)",
+    "Sara Faria Sundra (58)",
+    "Jubair Ahammad Akter (59)",
+    "Md. Mahmudul Hasan (60)",
+  ];
+
   const generateDocument = (e: FormEvent) => {
     e.preventDefault();
 
@@ -115,7 +179,7 @@ const Homepage = () => {
         expno: expno,
         expname: expname,
         oddeven: oddeven,
-        groupnum: groupnum,
+        groupnum: oddeven === "Odd" ? `A(${groupnum})` : `B(${groupnum})`,
         expDate: formateedExpDate,
         subDate: formattedSubDate,
         student1: student1,
@@ -156,7 +220,6 @@ const Homepage = () => {
         throw error;
       }
 
-      console.log("aaa");
       var out = doc.getZip().generate({
         type: "blob",
         mimeType:
@@ -164,7 +227,6 @@ const Homepage = () => {
       });
       // Output the document using Data-URI
       saveAs(out, "labCover.docx");
-      console.log("aaa2");
     });
   };
 
@@ -223,23 +285,23 @@ const Homepage = () => {
             placeholder="Pick date when this report will be submitted"
             {...form.getInputProps("subDate")}
           />
-          <TextInput
+          <NativeSelect
+            data={studentData}
             required
-            placeholder="Format : Name (Roll)"
             label="Enter student 1 name"
             withAsterisk
             {...form.getInputProps("student1")}
           />
-          <TextInput
+          <NativeSelect
+            data={studentData}
             required
-            placeholder="Format : Name (Roll)"
             label="Enter student 2 name"
             withAsterisk
             {...form.getInputProps("student2")}
           />
-          <TextInput
+          <NativeSelect
+            data={studentData}
             required
-            placeholder="Format : Name (Roll)"
             label="Enter student 3 name"
             withAsterisk
             {...form.getInputProps("student3")}
