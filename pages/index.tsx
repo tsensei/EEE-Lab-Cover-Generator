@@ -322,7 +322,7 @@ const Homepage = () => {
           Made with ❤️ by{" "}
           <Text
             component="a"
-            href="https://github.com/tsensei"
+            href="https://www.facebook.com/tsenseiii/"
             target="_blank"
             variant="gradient"
             gradient={{ from: "blue", to: "cyan" }}
