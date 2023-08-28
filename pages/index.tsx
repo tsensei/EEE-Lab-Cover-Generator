@@ -154,11 +154,7 @@ const Homepage = () => {
 
     console.log(process.env.NODE_ENV);
 
-    const isDev = process.env.NODE_ENV !== "production";
-    // const basePath = isDev ? "" : "/EEE-Lab-Report-Generator";
-    const basePath = "/EEE-Lab-Report-Generator";
-
-    loadFile(`${basePath}/template.docx`, (error, content) => {
+    loadFile(`/template.docx`, (error, content) => {
       if (error) {
         throw error;
       }
